@@ -35,7 +35,10 @@ class decrypt:
             if t != ' ':
                 self.i += 1
                 self.zahl = int(t) / self.i / key
-                self.output += (self.alphabet_dict[self.zahl])
+                if self.zahl.round() == self.zahl:
+                    self.output += (self.alphabet_dict[self.zahl])
+                else:
+                    self.output = "Is this the right key?" 
         return self.output
 
 def main():
